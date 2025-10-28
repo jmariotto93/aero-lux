@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Bf109",
+    "price": 6500000,
+    "image": "https://i.pinimg.com/1200x/10/a3/09/10a309f922bbd967c774b3160e500e85.jpg"
+  },
+  {
+    "id": 2,
+    "name": "F4U",
+    "price": 3500000,
+    "image": "https://i.pinimg.com/736x/fd/1c/8e/fd1c8e65b08023c8ca7552027bb3ba75.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Spitfire",
+    "price": 4800000,
+    "image": "https://i.pinimg.com/736x/36/f8/2e/36f82ee22148996f3725f2ae7bb33200.jpg"
+  },
+  {
+    "id": 4,
+    "name": "P-38",
+    "price": 7000000,
+    "image": "https://i.pinimg.com/1200x/c8/f7/80/c8f7803e38942648caf2cfddcd4979d3.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Hurricane",
+    "price": 3200000,
+    "image": "https://i.pinimg.com/736x/08/f0/e6/08f0e6462e5a82f7b1cb662abe888f2e.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Me262",
+    "price": 8500000,
+    "image": "https://i.pinimg.com/736x/4d/e6/78/4de67829e23fc3d31be2ab3e7bf6a7e5.jpg"
+  }
+]

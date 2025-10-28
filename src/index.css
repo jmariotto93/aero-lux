@@ -1,0 +1,85 @@
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* separa links e bandeiras */
+  align-items: center;
+  background-color: #2f2f2f; /* mesmo tom da sua imagem */
+  padding: 8px 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #3583b8; /* destaque dourado no hover */
+}
+
+.container {
+  padding: 20px;
+}
+
+.product-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product,
+.cart-item {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 8px 11px 17px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product:hover {
+  transform: scale(1.01);
+  box-shadow: 12px 15px 25px 0px rgba(0, 0, 0, 0.16);
+}
+
+.product img {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.flags-container {
+  display: flex;
+  gap: 5px;
+}
+
+.flags {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.flags:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+.flags.active {
+  transform: scale(1.25);
+  box-shadow: 0 2px 8px rgba(83, 66, 66, 0.3);
+}
