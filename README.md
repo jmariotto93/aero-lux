@@ -1,16 +1,50 @@
-# React + Vite
+# ✈️ E-commerce de Venda de Aviões
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> ⚠️ Este projeto está atualmente em **desenvolvimento**. Funcionalidades podem mudar e ainda não está pronto para produção.
 
-Currently, two official plugins are available:
+Este projeto é um e-commerce de venda de aviões, desenvolvido com **React**. O objetivo é criar uma aplicação moderna, interativa e **multilíngue**, permitindo aos usuários:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Navegar pelos modelos de aviões disponíveis  
+- Visualizar preços atualizados conforme a moeda do país selecionado  
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **React**: construção da interface e gerenciamento de componentes  
+- **React i18next (i18n)**: tradução dinâmica do conteúdo para diferentes idiomas (pt, en, de, es, ru, zh)  
+- **API ExchangeRate.host**: conversão de moedas em tempo real  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌍 Funcionalidades
+
+- Tradução automática ao selecionar o idioma via bandeira  
+- Conversão automática de preços de acordo com a moeda local  
+
+**Exemplo de conversão de moeda:**
+
+| Base (USD) | Brasil (BRL) |
+|------------|--------------|
+| $6,500,000 | R$ 35,000,000 |
+
+- Interface responsiva e intuitiva  ⚠️ em **desenvolvimento**.
+
+---
+
+## 💻 API de Conversão de Moeda
+
+A aplicação utiliza a API pública: [ExchangeRate.host](https://exchangerate.host/documentation)  
+
+Essa chamada busca a taxa de conversão atual entre a moeda base e a moeda destino, garantindo que os valores exibidos estejam sempre atualizados conforme o mercado.
+
+---
+
+## 🚀 Objetivo
+
+O projeto foi criado para praticar:
+
+- Internacionalização (i18n)  
+- Consumo de APIs externas  
+- Formatação dinâmica de valores monetários  
+- Desenvolvimento de uma aplicação React moderna e interativa
