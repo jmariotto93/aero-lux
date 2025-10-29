@@ -5,12 +5,41 @@ import Cart from "./components/Cart";
 import ThankYouPage from "./components/ThankYouPage";
 import i18n from "./i18n";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
   const [currency, setCurrency] = useState("USD");
   const [rate, setRate] = useState(1);
   const [symbol, setSymbol] = useState("$");
   const { t } = useTranslation();
+
+  const handleAddCart = (product, quantity) => {
+    setCartItems((prevItems) => {
+      //se não existir => adiciona o item
+      // se existir => incremento a quantidade
+      const itemExists = prevItems.find((item) => item.id === product.id);
+
+      if (itemExists) {
+        setTimeout(
+          () => toast.info(`Quantidade do item ${product.name} atualizada!`),
+          0
+        );
+        return prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        setTimeout(
+          () => toast.success(`${product.name} adicionado com sucesso!`),
+          0
+        );
+        return [...prevItems, { ...product, quantity }];
+      }
+    });
+  };
 
   // busca a cotação atual com base na moeda escolhida
   useEffect(() => {
@@ -116,13 +145,26 @@ function App() {
           <Route
             path="/"
             element={
-              <Catalog currency={currency} rate={rate} symbol={symbol} />
+              <Catalog
+                onAddToCart={handleAddCart}
+                currency={currency}
+                rate={rate}
+                symbol={symbol}
+              />
             }
           />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnFocusLoss
+        pauseOnHover
+      />
     </BrowserRouter>
   );
 }

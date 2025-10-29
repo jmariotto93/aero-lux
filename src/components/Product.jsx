@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Product = ({ product, currency, rate, symbol }) => {
+const Product = ({ product, currency, rate, symbol, onAddToCart }) => {
+  const [quantity, setQuantity] = useState(1);
+
   const { i18n, t } = useTranslation();
   const convertedPrice = product.price * (rate || 1);
 
@@ -64,7 +67,14 @@ const Product = ({ product, currency, rate, symbol }) => {
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
       <p>{formatAbbreviatedPrice(convertedPrice)}</p>
-      <button>{t("addToCart")}</button>
+      <div className="cart-buttons">
+        <select>
+          <option value="">1</option>
+        </select>
+        <button onClick={() => onAddToCart(product, quantity)}>
+          {t("addToCart")}
+        </button>
+      </div>
     </div>
   );
 };

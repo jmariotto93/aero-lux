@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import productsData from "../data/products_mock.json";
 import Product from "./Product";
 
-export const Catalog = ({ currency, rate, symbol }) => {
+export const Catalog = ({ currency, rate, symbol, onAddToCart }) => {
   const { t } = useTranslation();
 
   return (
@@ -16,6 +16,7 @@ export const Catalog = ({ currency, rate, symbol }) => {
             currency={currency}
             rate={rate}
             symbol={symbol}
+            onAddToCart={onAddToCart}
           />
         ))}
       </div>

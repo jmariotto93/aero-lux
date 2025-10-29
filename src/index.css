@@ -11,6 +11,7 @@ nav {
   align-items: center;
   background-color: #2f2f2f; /* mesmo tom da sua imagem */
   padding: 8px 16px;
+  flex-wrap: wrap;
 }
 
 nav a {
