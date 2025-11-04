@@ -68,8 +68,12 @@ const Product = ({ product, currency, rate, symbol, onAddToCart }) => {
       <h3>{product.name}</h3>
       <p>{formatAbbreviatedPrice(convertedPrice)}</p>
       <div className="cart-buttons">
-        <select>
-          <option value="">1</option>
+        <select onChange={(e) => setQuantity(e.target.value)}>
+          {[...Array(10).keys()].map((x) => (
+            <option key={x + 1} value={x + 1}>
+              {x + 1}
+            </option>
+          ))}
         </select>
         <button onClick={() => onAddToCart(product, quantity)}>
           {t("addToCart")}

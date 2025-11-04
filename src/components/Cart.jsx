@@ -1,4 +1,6 @@
-const Cart = ({ cartItems }) => {
+import CartItem from "./CartItem";
+
+const Cart = ({ cartItems, onUpdateCart }) => {
   return (
     <div>
       <h1>Carrinho</h1>
@@ -7,7 +9,7 @@ const Cart = ({ cartItems }) => {
       ) : (
         <>
           {cartItems.map((item) => (
-            <p>{item.name}</p>
+            <CartItem item={item} onUptadeCart={onUpdateCart} />
           ))}
         </>
       )}

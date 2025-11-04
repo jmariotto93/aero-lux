@@ -91,6 +91,15 @@ function App() {
     setCurrency(curr);
   };
 
+  const handleUpdateCart = (product, quantity) => {
+    toast.info(`Quantidade do item ${product.name} atualizada!`);
+    setCartItems((prevItems) => {
+      return prevItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: +quantity } : item
+      );
+    });
+  };
+
   return (
     <BrowserRouter>
       <nav>
@@ -153,7 +162,12 @@ function App() {
               />
             }
           />
-          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart cartItems={cartItems} onUpdateCart={handleUpdateCart} />
+            }
+          />
           <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </div>
