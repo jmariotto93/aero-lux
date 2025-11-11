@@ -84,3 +84,47 @@ nav a:hover {
   transform: scale(1.25);
   box-shadow: 0 2px 8px rgba(83, 66, 66, 0.3);
 }
+
+.product h3,
+.cart-item h3 {
+  margin-top: 0;
+}
+
+.cart-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.product button,
+.cart-item button,
+.total button,
+.thank-you-page button {
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product button:hover,
+.cart-item button:hover,
+.total button:hover,
+.thank-you-page button:hover {
+  background-color: #449e44;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.total p {
+  font-size: 18px;
+  font-weight: bold;
+}
