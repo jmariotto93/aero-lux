@@ -175,6 +175,15 @@ function App() {
                 cartItems={cartItems}
                 onUpdateCart={handleUpdateCart}
                 OnRemoveFromCart={handleRemoveFromCart}
+                setCartItems={setCartItems}
+                onCheckout={() => {
+                  if (cartItems.length > 0) {
+                    toast.success("Compra finalizada com sucesso!");
+                    setCartItems([]);
+                  } else {
+                    toast.error("Seu carrinho está vazio!");
+                  }
+                }}
               />
             }
           />

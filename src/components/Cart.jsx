@@ -1,7 +1,7 @@
 import CartItem from "./CartItem";
 import CheckoutButton from "./CheckoutButton";
 
-const Cart = ({ cartItems, onUpdateCart, OnRemoveFromCart }) => {
+const Cart = ({ cartItems, onUpdateCart, OnRemoveFromCart, setCartItems }) => {
   const totalPrice = cartItems.reduce(
     (total, item) =>
       total + (Number(item.price) || 0) * (Number(item.quantity) || 0),
@@ -25,7 +25,7 @@ const Cart = ({ cartItems, onUpdateCart, OnRemoveFromCart }) => {
 
           <div className="total">
             <p>Total: ${totalPrice}</p>
-            <CheckoutButton />
+            <CheckoutButton cartItems={cartItems} setCartItems={setCartItems} />
           </div>
         </>
       )}
