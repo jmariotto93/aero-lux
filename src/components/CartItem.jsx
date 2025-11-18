@@ -1,4 +1,14 @@
 const CartItem = ({ item, onUptadeCart, OnRemoveFromCart }) => {
+  const handleQtyChange = (e) => {
+    const qty = parseInt(e.target.value);
+
+    if (qty <= 0) {
+      OnRemoveFromCart(item);
+    } else {
+      onUptadeCart(item, qty);
+    }
+  };
+
   return (
     <div className="cart-item">
       <h3>{item.name}</h3>
@@ -8,7 +18,7 @@ const CartItem = ({ item, onUptadeCart, OnRemoveFromCart }) => {
           type="number"
           min="0"
           value={item.quantity}
-          onChange={(e) => onUptadeCart(item, parseInt(e.target.value))}
+          onChange={handleQtyChange}
         />
         <button onClick={(e) => OnRemoveFromCart(item)}>Remover</button>
       </div>
